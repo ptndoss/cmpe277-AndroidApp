@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,14 @@ public class CurrencyConverter extends AppCompatActivity  {
     Spinner currency = null;
     String chosenCurrency;
     private String toggle= "False";
+
+    RequestQueue requestQueue;
+    String jsonValues = "https://api.exchangeratesapi.io/latest?base=USD";
+    String data = "";
+    double pound;
+    double en;
+    double rupee;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
